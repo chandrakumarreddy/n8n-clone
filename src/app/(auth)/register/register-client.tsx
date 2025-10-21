@@ -23,6 +23,7 @@ import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import Loader from "@/components/ui/loader";
 
 const registerSchema = z
   .object({
@@ -146,6 +147,7 @@ export default function Register() {
               />
               <Button type="submit" className="w-full" disabled={isPending}>
                 Sign up
+                {isPending && <Loader size={16} />}
               </Button>
             </form>
             <div className="text-center text-sm mt-4">

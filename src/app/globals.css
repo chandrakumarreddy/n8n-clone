@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+#nprogress .bar {
+  background: #d97757 !important;
+  height: 4px;
+}
+
+#nprogress .peg {
+  box-shadow:
+    0 0 10px #d97757,
+    0 0 5px #d97757 !important;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -11,6 +22,7 @@
   --popover: oklch(1.0000 0 0);
   --popover-foreground: oklch(0.2671 0.0196 98.9390);
   --primary: oklch(0.6171 0.1375 39.0427);
+  /* #d97757 */
   --primary-foreground: oklch(1.0000 0 0);
   --secondary: oklch(0.9245 0.0138 92.9892);
   --secondary-foreground: oklch(0.4334 0.0177 98.6048);

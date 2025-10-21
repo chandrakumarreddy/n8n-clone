@@ -23,6 +23,7 @@ import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import Loader from "@/components/ui/loader";
 
 const loginSchema = z.object({
   email: z.email({ message: "Please enter a valid email" }),
@@ -34,6 +35,7 @@ const loginSchema = z.object({
 
 export default function LoginClient() {
   const router = useRouter();
+
   const form = useForm({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -60,6 +62,7 @@ export default function LoginClient() {
     );
   };
   const isPending = form.formState.isSubmitting;
+
   return (
     <div className="min-w-md max-w-md mx-auto flex items-center justify-center h-screen">
       <Card className="w-full flex flex-col gap-4 items-center">
@@ -120,6 +123,7 @@ export default function LoginClient() {
               />
               <Button type="submit" className="w-full" disabled={isPending}>
                 Login
+                {isPending && <Loader size={16} />}
               </Button>
             </form>
             <div className="text-center text-sm mt-4">

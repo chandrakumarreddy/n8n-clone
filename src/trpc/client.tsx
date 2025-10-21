@@ -8,6 +8,7 @@ import { useState } from "react";
 import { makeQueryClient } from "./query-client";
 import type { AppRouter } from "./routers/_app";
 import { Toaster } from "@/components/ui/sonner";
+import ProgressProvider from "@/components/nprogress-provider";
 
 export const { TRPCProvider, useTRPC } = createTRPCContext<AppRouter>();
 
@@ -49,6 +50,7 @@ export function TRPCReactProvider(
       <TRPCProvider trpcClient={trpcClient} queryClient={queryClient}>
         {props.children}
         <Toaster position="top-center" />
+        <ProgressProvider />
       </TRPCProvider>
     </QueryClientProvider>
   );
