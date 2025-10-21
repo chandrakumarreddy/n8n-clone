@@ -1,2 +1,3 @@
-`bunx prisma migrate dev`
-`bunx prisma studio`
+bunx prisma migrate dev
+
+bunx prisma studio
