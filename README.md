@@ -1,8 +1,10 @@
+### Commands
+
 1. bunx prisma migrate dev
 2. bunx prisma studio
 3. inngest-cli dev
 
-###### Dependencies
+### Dependencies
 
 1. Next.js
 2. TailwindCSS
@@ -17,5 +19,3 @@
 11. tweakcn (anthropic theme)
 12. Inngest
 13. mprocs (multi process)
-
-###### migrate prisma
