@@ -1,6 +1,6 @@
-bunx prisma migrate dev
-
-bunx prisma studio
+1. bunx prisma migrate dev
+2. bunx prisma studio
+3. inngest-cli dev
 
 ###### Dependencies
 
@@ -15,3 +15,7 @@ bunx prisma studio
 9. Sonner
 10. NProgress
 11. tweakcn (anthropic theme)
+12. Inngest
+13. mprocs (multi process)
+
+###### migrate prisma

@@ -1,0 +1,9 @@
+procs:
+  inngest:
+    cmd: ["npx", "inngest-cli@latest", "dev"]
+
+  prisma_studio:
+    cmd: ["bun", "run", "prisma:studio"]
+
+  next:
+    cmd: ["bun", "run", "dev"]

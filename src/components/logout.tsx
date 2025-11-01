@@ -9,6 +9,7 @@ export default function Logout() {
   const [isPending, setIsPending] = useState(false);
   return (
     <Button
+      className="w-fit"
       onClick={() => {
         setIsPending(true);
         authClient.signOut({
