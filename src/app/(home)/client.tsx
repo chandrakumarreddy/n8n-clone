@@ -6,6 +6,7 @@ import { useTRPC } from "@/trpc/client";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { Card, CardContent } from "@/components/ui/card";
 
 const HomeClient = () => {
   const { data, isPending } = authClient.useSession();
@@ -15,6 +16,13 @@ const HomeClient = () => {
     trpc.createWorkflow.mutationOptions({
       onSuccess: () => {
         toast.success("Job queued");
+      },
+    })
+  );
+  const testAi = useMutation(
+    trpc.testAi.mutationOptions({
+      onSuccess: () => {
+        toast.success("Ai tested");
       },
     })
   );
@@ -34,6 +42,9 @@ const HomeClient = () => {
         disabled={createWorkflow.isPending}
       >
         Create workflow
+      </Button>
+      <Button onClick={() => testAi.mutate()} disabled={testAi.isPending}>
+        Test Ai
       </Button>
       {data && <Logout />}
     </div>
